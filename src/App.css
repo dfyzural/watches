@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+.addForm {
+  width: 500px;
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 30px;
+}
+
+.watch-input {
+  display: flex;
+  flex-flow: column;
+  margin-right: 10px;
+  align-items: start;
+}
+
+.form-label {
+  font-size: 14px;
+  margin: 10px;
+}
+
+.form-input {
+  display: flex;
+  flex-flow: column;
+  margin-right: 10px;
+  align-items: start;
+}
+
+
+.watch-list {
+  width: 500px;
+}
+
+.watch {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.watch-name {
+  margin-right: 10px;
+  align-items: start;
+  width: 200px;
+}
+.watch-time {
+  margin-right: 10px;
+  align-items: start;
+  width: 200px;
+}
+
+.watch-zone {
+  border: 0px;
+  background: white;
+  width: 100px;
+}
+
+.watch-delete {
+  border: 0px;
+  background: white;
+  width: 70px;
+}
