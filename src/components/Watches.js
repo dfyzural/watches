@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import moment from 'moment'
+import 'moment-timezone';
 import FormAdd from './FormAdd';
 import { nanoid } from 'nanoid'
 
@@ -13,7 +14,8 @@ export default function Watches() {
         }
     ])
 
-    const currentDateTime = () => moment()
+    
+    const currentDateTime = () => moment().tz("America/Los_Angeles").format();
     const [currentTime, setCurrentTime] = useState(currentDateTime())
 
     const addWatch = (watch) =>
@@ -52,8 +54,8 @@ export default function Watches() {
                 {watches.map(watch =>
                     <div className='watch' key={watch.id}>
                         <div className='watch-name'>{watch.name}</div>
-                        <div className='watch-time'>{moment().add(watch.zone, 'hours').format("DD-MM-YYYY HH:mm:ss")}</div>
-                        <div className='watch-zone'>(GTM {watch.zone})</div>
+                        <div className='watch-time'>{moment().add(watch.zone, 'hours').utc().format("DD-MM-YYYY HH:mm:ss")}</div>
+                        <div className='watch-zone'>(GMT {watch.zone})</div>
                         <button className="watch-delete" onClick={() => deleteWatch(watch.id)}>🗙</button>
                     </div>
                 )}
